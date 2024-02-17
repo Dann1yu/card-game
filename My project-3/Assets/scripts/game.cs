@@ -7,10 +7,12 @@ public class game : MonoBehaviour
     // Start is called before the first frame update
 
     
-    public SpriteRenderer spriteRenderer;
+    public SpriteRenderer sprite_Renderer;
+    public Sprite sprite;
     public Sprite[] newsprite = new Sprite[30];
     public cards cardscript;
     public GameObject CardPrefab;
+    public string[] deck;
 
     void Start()
     {
@@ -36,14 +38,20 @@ public class game : MonoBehaviour
         GameObject Circle = GameObject.Instantiate(CardPrefab);
         Circle.transform.localPosition = new Vector3(2, 2,2);
         Circle.name = name;
-        //Circle.Sprite = newsprite;
+        //deck[id] = name;
 
         cards cardscript = Circle.GetComponent<cards>();
-        spriteRenderer.sprite = newsprite[id];
+
+        sprite_Renderer = Circle.GetComponent<SpriteRenderer>();
+        sprite_Renderer.sprite = newsprite[id];
+        
+        
+
         cardscript.strength = str;
         cardscript.health = health;
         cardscript.intelligence = intel;
         cardscript.charissma = rizz;
+
     }
 
     private void delete_card(string name)
@@ -51,5 +59,14 @@ public class game : MonoBehaviour
         GameObject Circle = (GameObject.Find(name));
         Debug.Log(Circle.name);
         Destroy(Circle);
+        
+    }
+
+    //subrouitne to shuffle an array of the names or ids of the cards and then 
+    //give to both players
+
+    private void shuffle_deck()
+    {
+       //shuffle the deck array please
     }
 }

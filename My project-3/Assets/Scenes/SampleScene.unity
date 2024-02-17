@@ -237,9 +237,40 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233e0e0ff46c5be40a897a42c2db83b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  card: {fileID: 0}
-  spriteRenderer: {fileID: 0}
-  newsprite: {fileID: 0}
+  sprite_Renderer: {fileID: 0}
+  newsprite:
+  - {fileID: 21300000, guid: 50fe57a4ba76f2d41b5a55068f1929ca, type: 3}
+  - {fileID: 21300000, guid: b3515384fec83244f975c1957853eb64, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 21300000, guid: 50fe57a4ba76f2d41b5a55068f1929ca, type: 3}
+  - {fileID: 21300000, guid: b3515384fec83244f975c1957853eb64, type: 3}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  cardscript: {fileID: 578591433}
+  CardPrefab: {fileID: 4464024213553979744, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,6 +363,28 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &578591430 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4464024213553979744, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
+  m_PrefabInstance: {fileID: 1603856384}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &578591433
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 578591430}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 98cc78eab009da646b94b60205243728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  strength: 0
+  intelligence: 0
+  charissma: 0
+  health: 0
+  image: {fileID: 0}
 --- !u!1 &1238270690
 GameObject:
   m_ObjectHideFlags: 0
@@ -410,11 +463,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3284718923078800051, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 16.97
       objectReference: {fileID: 0}
     - target: {fileID: 3284718923078800051, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: 7.99
       objectReference: {fileID: 0}
     - target: {fileID: 3284718923078800051, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
       propertyPath: m_LocalPosition.z
@@ -451,7 +504,11 @@ PrefabInstance:
     - target: {fileID: 3709496975150406518, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: 50fe57a4ba76f2d41b5a55068f1929ca, type: 3}
+      objectReference: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
+    - target: {fileID: 3709496975150406518, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4464024213553979744, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
       propertyPath: m_Name
       value: Card
@@ -459,7 +516,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4464024213553979744, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 578591433}
   m_SourcePrefab: {fileID: 100100000, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
