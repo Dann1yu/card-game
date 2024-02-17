@@ -6,16 +6,15 @@ using UnityEngine.EventSystems;
 public class cards : MonoBehaviour
 {
 
-    public int age;
+    public int strength;
+    public int intelligence;
+    public int charissma;
+    public int health;
     public GameObject image;
     // Start is called before the first frame update
     void Start()
     {
-        create_card("krunk", 3, 3, 3, 3);
-        create_card("krunk", 3, 3, 3, 3);
-        create_card("krunk", 3, 3, 3, 3);
-        create_card("krunk", 3, 3, 3, 3);
-
+       
     }
 
     // Update is called once per frame
@@ -24,8 +23,5 @@ public class cards : MonoBehaviour
         
     }
 
-    private void create_card(string name, int str, int intel, int rizz, int health)
-    {
-        
-    }
+   
 }
