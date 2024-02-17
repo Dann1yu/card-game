@@ -21,4 +21,8 @@ public class Battle : MonoBehaviour
     {
         Debug.Log("Hello World.");
     }
+    public void Die(GameObject object1)
+    {
+        Destroy(object1);
+    }
 }

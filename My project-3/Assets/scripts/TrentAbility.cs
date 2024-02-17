@@ -9,7 +9,9 @@ public class TrentAbility : MonoBehaviour
     void Start()
     {
         battleScript = GameObject.FindGameObjectWithTag("Battle").GetComponent<Battle>();
+        battleScript = GameObject.FindGameObjectWithTag("Battle").GetComponent<Battle>();
         battleScript.Finish_Battle();
+        battleScript.Die(GameObject.Find("Trent"));
     }
 
     // Update is called once per frame
