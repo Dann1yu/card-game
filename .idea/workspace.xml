@@ -6,7 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="a8b99849-f340-454c-8a61-66b856bb2aba" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My project-3/Assets/Scenes/scene 2.unity" beforeDir="false" afterPath="$PROJECT_DIR$/My project-3/Assets/Scenes/scene 2.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My project-3/Assets/scripts/Battle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/My project-3/Assets/scripts/Battle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My project-3/Assets/scripts/LeagueAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/My project-3/Assets/scripts/LeagueAbility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My project-3/Assets/scripts/QueenAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/My project-3/Assets/scripts/QueenAbility.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/My project-3/Assets/scripts/TrentAbility.cs" beforeDir="false" afterPath="$PROJECT_DIR$/My project-3/Assets/scripts/TrentAbility.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My project-3/Assets/scripts/game.cs" beforeDir="false" afterPath="$PROJECT_DIR$/My project-3/Assets/scripts/game.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/My project-3/Assets/scripts/game.cs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/My project-3/Assets/scripts/game.cs.meta" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

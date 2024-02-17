@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Battle : MonoBehaviour
 {
+    bool playerLost;
     public bool finished;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,7 +19,13 @@ public class Battle : MonoBehaviour
     {
         
     }
-
+    public void Start_Battle()
+    {
+        if(playerLost)
+        {
+            
+        }
+    }
     public void Finish_Battle()
     {
         finished = true;

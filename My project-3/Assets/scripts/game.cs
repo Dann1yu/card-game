@@ -8,7 +8,7 @@ public class game : MonoBehaviour
 
     
     public SpriteRenderer spriteRenderer;
-    public Sprite[] newsprite = new Sprite[30];
+    public Sprite[] newsprite = new Sprite[12];
     public cards cardscript;
     public GameObject CardPrefab;
 

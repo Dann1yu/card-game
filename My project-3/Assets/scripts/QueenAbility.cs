@@ -19,7 +19,7 @@ public class QueenAbility : MonoBehaviour
         {
             battleScript.Die(GameObject.Find("Queen"));
             abilityTriggered = true;
-
+            battleScript.finished = false;
         }
     }
 }

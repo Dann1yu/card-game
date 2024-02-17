@@ -21,7 +21,7 @@ public class LeagueAbility : MonoBehaviour
          {
             strength += 5;
             abilityTriggered = true;
-
+            battleScript.finished = false;
          }
     }
 }

@@ -1,12 +1,9 @@
 fileFormatVersion: 2
-guid: 233e0e0ff46c5be40a897a42c2db83b8
+guid: d7dc9b2def7bd6144ba13a799ed15f9c
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences:
-  - spriteRenderer: {instanceID: 0}
-  - cardscript: {instanceID: 0}
-  - CardPrefab: {instanceID: 0}
+  defaultReferences: []
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

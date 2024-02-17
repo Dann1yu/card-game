@@ -23,6 +23,7 @@ public class TrentAbility : MonoBehaviour
              if (health < 0){
                 battleScript.Die(GameObject.Find("Trent"));
              }
+             battleScript.finished = false;
         }
     }
 }
