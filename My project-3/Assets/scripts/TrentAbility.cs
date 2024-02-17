@@ -18,12 +18,11 @@ public class TrentAbility : MonoBehaviour
     void Update()
     {
         if (battleScript.finished){
-            if (health > 2 && strength > 2){
-                health -= 4;
-                strength -=4;
+                health -= 3;
+                strength -=3;
+             if (health < 0){
+                battleScript.Die(GameObject.Find("Trent"));
              }
-             else{
-             battleScript.Die(GameObject.Find("Trent"));}
         }
     }
 }
