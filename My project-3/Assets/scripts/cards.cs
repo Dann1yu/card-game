@@ -26,6 +26,6 @@ public class cards : MonoBehaviour
 
     private void create_card(string name, int str, int intel, int rizz, int health)
     {
-        instatiate 
+
     }
 }
