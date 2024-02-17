@@ -7,14 +7,11 @@ public class cards : MonoBehaviour
 {
 
     public int age;
-    public GameObject image;
+    
     // Start is called before the first frame update
     void Start()
     {
-        create_card("krunk", 3, 3, 3, 3);
-        create_card("krunk", 3, 3, 3, 3);
-        create_card("krunk", 3, 3, 3, 3);
-        create_card("krunk", 3, 3, 3, 3);
+        Debug.Log("start game");
 
     }
 
@@ -24,8 +21,5 @@ public class cards : MonoBehaviour
         
     }
 
-    private void create_card(string name, int str, int intel, int rizz, int health)
-    {
-        instatiate 
-    }
+    
 }
