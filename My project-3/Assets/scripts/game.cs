@@ -5,6 +5,7 @@ using System.Linq;
 using Unity.VisualScripting;
 using UnityEditor;
 using UnityEngine;
+using UnityEngine.UI;
 public class Game : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -24,12 +25,21 @@ public class Game : MonoBehaviour
     public Dictionary<string, int> enemyAttributes = new Dictionary<string, int>();
     public GameObject playerCard;
     public GameObject enemyCard;
+    public bool pressed;
+    public string value;
+
+    public Button btn1;
+    public Button btn2;
+    public Button btn3;
+    public Button btn4;
     
     System.Random random = new System.Random();
 
     void Start()
     {
 
+       
+        
 
         create_card("kronk", 0, 10, 10, 10, 10);
         create_card("politician", 1, 4, 1, 6, 2);
@@ -103,7 +113,35 @@ public class Game : MonoBehaviour
 
     //subrouitne to shuffle an array of the names or ids of the cards and then
     //give to both players
+    public void onClick1()
+    {
+        Debug.Log(pressed);
+        value = "strength";
+        pressed = true;
+        //btn1.SetActive(false);
+        Start_Battle(playerCards[0], enemyCards[0]);
 
+    }
+    public void onClick2()
+    {
+        value = "intelligence";
+        pressed = true;
+        //btn2.interactable = false;
+        Start_Battle(playerCards[0], enemyCards[0]);
+    }
+    public void onClick3()
+    {
+        value = "charisma";
+        pressed = true;
+        Start_Battle(playerCards[0], enemyCards[0]);
+        //btn3.interactable = false;
+    }
+    public void onClick4()
+    {
+        value = "health";
+        Start_Battle(playerCards[0], enemyCards[0]);
+        //btn4.interactable = false;
+    }
     private void shuffle_deck()
     {
         //shuffle the deck array please
@@ -115,7 +153,8 @@ public class Game : MonoBehaviour
         int playerValue;
         this.playerCard = playerCard;
         this.enemyCard = enemyCard;
-        
+        playerCard.transform.position = new Vector3(-6, 0, 0);
+        enemyCard.transform.position = new Vector3(6, 0, 0);
         cards cardscript = playerCard.GetComponent<cards>();
         cards cardscript2 = enemyCard.GetComponent<cards>();
         playerAttributes.Add("strength", cardscript.strength);
@@ -126,6 +165,7 @@ public class Game : MonoBehaviour
         enemyAttributes.Add("intelligence", cardscript2.intelligence);
         enemyAttributes.Add("charisma", cardscript2.charisma);
         enemyAttributes.Add("health", cardscript2.health);
+       
         int enemyValue = enemyAttributes["strength"];
         if (playerLost)
         {
@@ -140,11 +180,12 @@ public class Game : MonoBehaviour
             Battle(playerValue, enemyValue);
             
         }
-        else
+        else if(pressed = true)
         {
-            value = "strength";
+            
             playerValue = playerAttributes[value];
             enemyValue = enemyAttributes[value];
+            pressed = false;
             Battle(playerValue, enemyValue);
         }
     }
@@ -159,7 +200,8 @@ public class Game : MonoBehaviour
             playerLost = false;
             playerCards.Add(enemyCard);
             playerCards.Insert(playerCards.Count, playerCard);
-            enemyCards.Remove(enemyCard);   
+            enemyCards.Remove(enemyCard);
+            Finish_Battle();
         }
         //player draws, choose a random value and play again
         if(playerValue == enemyValue)
@@ -176,6 +218,7 @@ public class Game : MonoBehaviour
             enemyCards.Add(playerCard);
             enemyCards.Insert(enemyCards.Count, enemyCard);
             playerCards.Remove(playerCard);
+            Finish_Battle();
         }
     }
     public void Finish_Battle()
@@ -184,6 +227,8 @@ public class Game : MonoBehaviour
         enemyAttributes.Clear();
         finished = true;
         Debug.Log("Hello World.");
+        pressed = false;
+        Start_Battle(playerCards[0], enemyCards[0]);
     }
     public void Die(GameObject object1)
     {

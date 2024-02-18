@@ -4,9 +4,16 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - spriteRenderer: {instanceID: 0}
+  - sprite_Renderer: {instanceID: 0}
+  - sprite: {instanceID: 0}
   - cardscript: {instanceID: 0}
-  - CardPrefab: {instanceID: 0}
+  - CardPrefab: {fileID: 4464024213553979744, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
+  - playerCard: {instanceID: 0}
+  - enemyCard: {instanceID: 0}
+  - btn1: {instanceID: 0}
+  - btn2: {instanceID: 0}
+  - btn3: {instanceID: 0}
+  - btn4: {instanceID: 0}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 
