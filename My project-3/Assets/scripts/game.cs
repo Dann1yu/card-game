@@ -11,7 +11,7 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
 
     public bool finished;
-    bool playerLost = true;
+    bool playerLost = false;
     public SpriteRenderer sprite_Renderer;
     public Sprite sprite;
     public Sprite[] newsprite = new Sprite[12];
@@ -32,7 +32,7 @@ public class Game : MonoBehaviour
     public Button btn2;
     public Button btn3;
     public Button btn4;
-    
+
     System.Random random = new System.Random();
 
     void Start()
@@ -201,14 +201,15 @@ public class Game : MonoBehaviour
             playerCards.Add(enemyCard);
             playerCards.Insert(playerCards.Count, playerCard);
             enemyCards.Remove(enemyCard);
-            Finish_Battle();
+            //Finish_Battle();
         }
         //player draws, choose a random value and play again
         if(playerValue == enemyValue)
         {
             playerValue = playerAttributes.ElementAt(random.Next(0, playerAttributes.Count)).Value;
             enemyValue = enemyAttributes.ElementAt(random.Next(0, playerAttributes.Count)).Value;
-            Battle(playerValue, enemyValue);
+            Debug.Log("loop");
+            //Battle(playerValue, enemyValue);
         }
         //player loses
         if(playerValue < enemyValue)
@@ -218,7 +219,7 @@ public class Game : MonoBehaviour
             enemyCards.Add(playerCard);
             enemyCards.Insert(enemyCards.Count, enemyCard);
             playerCards.Remove(playerCard);
-            Finish_Battle();
+            //Finish_Battle();
         }
     }
     public void Finish_Battle()
