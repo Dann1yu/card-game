@@ -22,6 +22,8 @@ public class Game : MonoBehaviour
     public List<GameObject> allCards = new List<GameObject>();
     public Dictionary<string, int> playerAttributes = new Dictionary<string, int>();
     public Dictionary<string, int> enemyAttributes = new Dictionary<string, int>();
+    public GameObject playerCard;
+    public GameObject enemyCard;
     
     System.Random random = new System.Random();
 
@@ -106,10 +108,13 @@ public class Game : MonoBehaviour
     {
         //shuffle the deck array please
     }
+    //before the battle gain the attributes to be compared
     public void Start_Battle(GameObject playerCard, GameObject enemyCard)
     {
         string value = "strength";
         int playerValue;
+        this.playerCard = playerCard;
+        this.enemyCard = enemyCard;
         
         cards cardscript = playerCard.GetComponent<cards>();
         cards cardscript2 = enemyCard.GetComponent<cards>();
@@ -136,7 +141,38 @@ public class Game : MonoBehaviour
             Debug.Log(playerValue);
             
         }
-        
+        else
+        {
+            value = "strength";
+            playerValue = playerAttributes[value];
+            enemyValue = enemyAttributes[value];
+            Battle(playerValue, enemyValue);
+        }
+    }
+    //Once you have the attributes start the battle
+    public void Battle(int playerValue, int enemyValue)
+    {
+        //player wins
+        if (playerValue > enemyValue)
+        {
+            playerLost = false;
+            playerCards.Add(enemyCard);
+            playerCards.Insert(playerCards.Count, playerCard);
+            enemyCards.Remove(enemyCard);
+        }
+        //player draws, choose a random value and play again
+        if(playerValue == enemyValue)
+        {
+            //battle again but with a random value from the card.
+        }
+        //player loses
+        if(playerValue < enemyValue)
+        {
+            playerLost = true;
+            enemyCards.Add(playerCard);
+            enemyCards.Insert(enemyCards.Count, enemyCard);
+            playerCards.Remove(playerCard);
+        }
     }
     public void Finish_Battle()
     {
