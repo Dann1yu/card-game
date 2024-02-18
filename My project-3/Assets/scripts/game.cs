@@ -10,7 +10,7 @@ public class Game : MonoBehaviour
     // Start is called before the first frame update
 
     public bool finished;
-    bool playerLost;
+    bool playerLost = true;
     public SpriteRenderer sprite_Renderer;
     public Sprite sprite;
     public Sprite[] newsprite = new Sprite[12];
@@ -108,6 +108,9 @@ public class Game : MonoBehaviour
     }
     public void Start_Battle(GameObject playerCard, GameObject enemyCard)
     {
+        string value = "strength";
+        int playerValue;
+        
         cards cardscript = playerCard.GetComponent<cards>();
         cards cardscript2 = enemyCard.GetComponent<cards>();
         playerAttributes.Add("strength", cardscript.strength);
@@ -118,23 +121,27 @@ public class Game : MonoBehaviour
         enemyAttributes.Add("intelligence", cardscript2.intelligence);
         enemyAttributes.Add("charisma", cardscript2.charisma);
         enemyAttributes.Add("health", cardscript2.health);
-        Debug.Log(playerAttributes["strength"]);
-        Debug.Log(playerAttributes["intelligence"]);
-        Debug.Log(playerAttributes["charisma"]);
-        Debug.Log(playerAttributes["health"]);
-        Debug.Log(enemyAttributes["strength"]);
-        Debug.Log(enemyAttributes["intelligence"]);
-        Debug.Log(enemyAttributes["charisma"]);
-        Debug.Log(enemyAttributes["health"]);
-
-        /*if (playerLost)
+        int enemyValue = enemyAttributes["strength"];
+        if (playerLost)
         {
-           
+            foreach(KeyValuePair<string,int> i in enemyAttributes) {
+                if(i.Value > enemyValue)
+                {
+                    enemyValue = i.Value;
+                    value = i.Key;
+                }
+            }
+            playerValue = playerAttributes[value];
+            Debug.Log(enemyValue);
+            Debug.Log(playerValue);
+            
         }
-        */
+        
     }
     public void Finish_Battle()
     {
+        playerAttributes.Clear();
+        enemyAttributes.Clear();
         finished = true;
         Debug.Log("Hello World.");
     }
