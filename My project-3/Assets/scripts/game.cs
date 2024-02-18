@@ -16,10 +16,11 @@ public class Game : MonoBehaviour
     public Sprite[] newsprite = new Sprite[12];
     public cards cardscript;
     public GameObject CardPrefab;
+    //We're using lists now it's easier
     public List<GameObject> playerCards = new List<GameObject>();
     public List<GameObject> enemyCards = new List<GameObject>();
     public List<GameObject> allCards = new List<GameObject>();
-    public List<GameObject> randomCards = new List<GameObject>();
+    
     System.Random random = new System.Random();
 
     void Start()
@@ -38,6 +39,7 @@ public class Game : MonoBehaviour
         create_card("Tech_bro", 9, 4, 7, 3, 5);
         create_card("Kaylor", 10, 4, 7, 9, 7);
         create_card("league", 11, 1, 9, 1, 1);
+        //This is the shuffle part
         int n = allCards.Count;
         while (n > 1)
         {
@@ -47,6 +49,15 @@ public class Game : MonoBehaviour
             allCards[k] = allCards[n];
             allCards[n] = value;
 
+        }
+        //Deal the cards to the player and the enemy
+        for (int i = 0; i < 6; i++) 
+        {
+            playerCards.Add(allCards[i]);
+        }
+        for (int i = 6; i < 12; i++)
+        {
+            enemyCards.Add(allCards[i]);
         }
     }
     // Update is called once per frame
