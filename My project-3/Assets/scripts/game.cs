@@ -1,9 +1,11 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using Unity.VisualScripting;
+using UnityEditor;
 using UnityEngine;
-
-public class game : MonoBehaviour
+public class Game : MonoBehaviour
 {
     // Start is called before the first frame update
 
@@ -14,9 +16,11 @@ public class game : MonoBehaviour
     public Sprite[] newsprite = new Sprite[12];
     public cards cardscript;
     public GameObject CardPrefab;
-    public String[] playerhand = new String[6];
-    public String[] enemyhand = new String[6];
-    public String[] allcards = new String[12];
+    public List<GameObject> playerCards = new List<GameObject>();
+    public List<GameObject> enemyCards = new List<GameObject>();
+    public List<GameObject> allCards = new List<GameObject>();
+    public List<GameObject> randomCards = new List<GameObject>();
+    System.Random random = new System.Random();
 
     void Start()
     {
@@ -34,12 +38,17 @@ public class game : MonoBehaviour
         create_card("Tech_bro", 9, 4, 7, 3, 5);
         create_card("Kaylor", 10, 4, 7, 9, 7);
         create_card("league", 11, 1, 9, 1, 1);
+        int n = allCards.Count;
+        while (n > 1)
+        {
+            n--;
+            int k = random.Next(n + 1);
+            GameObject value = allCards[k];
+            allCards[k] = allCards[n];
+            allCards[n] = value;
 
-
-        //create_card("null", 0, 0, 0, 0, 0);
-        //delete_card("Card");
+        }
     }
-
     // Update is called once per frame
     void Update()
     {
@@ -65,6 +74,7 @@ public class game : MonoBehaviour
         cardscript.intelligence = intel;
         cardscript.charissma = rizz;
 
+        allCards.Add(Circle);
     }
 
     private void delete_card(string name)
