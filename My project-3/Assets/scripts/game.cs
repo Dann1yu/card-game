@@ -20,6 +20,8 @@ public class Game : MonoBehaviour
     public List<GameObject> playerCards = new List<GameObject>();
     public List<GameObject> enemyCards = new List<GameObject>();
     public List<GameObject> allCards = new List<GameObject>();
+    public Dictionary<string, int> playerAttributes = new Dictionary<string, int>();
+    public Dictionary<string, int> enemyAttributes = new Dictionary<string, int>();
     
     System.Random random = new System.Random();
 
@@ -34,7 +36,7 @@ public class Game : MonoBehaviour
         create_card("Trent", 4, 10, 4, 3, 10);
         create_card("William", 5, 5, 5, 5, 5);
         create_card("Pete", 6, 7, 2, 4, 3);
-        create_card("Andy", 7, 2, 6, 2, 4);
+        create_card("Andy", 7, 6, 4, 2, 4);
         create_card("Chad", 8, 8, 3, 7, 7);
         create_card("Tech_bro", 9, 4, 7, 3, 5);
         create_card("Kaylor", 10, 4, 7, 9, 7);
@@ -59,6 +61,7 @@ public class Game : MonoBehaviour
         {
             enemyCards.Add(allCards[i]);
         }
+        Start_Battle(playerCards[0], enemyCards[0]);
     }
     // Update is called once per frame
     void Update()
@@ -83,7 +86,7 @@ public class Game : MonoBehaviour
         cardscript.strength = str;
         cardscript.health = health;
         cardscript.intelligence = intel;
-        cardscript.charissma = rizz;
+        cardscript.charisma = rizz;
 
         allCards.Add(Circle);
     }
@@ -103,12 +106,32 @@ public class Game : MonoBehaviour
     {
         //shuffle the deck array please
     }
-    public void Start_Battle()
+    public void Start_Battle(GameObject playerCard, GameObject enemyCard)
     {
-        if (playerLost)
-        {
+        cards cardscript = playerCard.GetComponent<cards>();
+        cards cardscript2 = enemyCard.GetComponent<cards>();
+        playerAttributes.Add("strength", cardscript.strength);
+        playerAttributes.Add("intelligence", cardscript.intelligence);
+        playerAttributes.Add("charisma", cardscript.charisma);
+        playerAttributes.Add("health", cardscript.health);
+        enemyAttributes.Add("strength", cardscript2.strength);
+        enemyAttributes.Add("intelligence", cardscript2.intelligence);
+        enemyAttributes.Add("charisma", cardscript2.charisma);
+        enemyAttributes.Add("health", cardscript2.health);
+        Debug.Log(playerAttributes["strength"]);
+        Debug.Log(playerAttributes["intelligence"]);
+        Debug.Log(playerAttributes["charisma"]);
+        Debug.Log(playerAttributes["health"]);
+        Debug.Log(enemyAttributes["strength"]);
+        Debug.Log(enemyAttributes["intelligence"]);
+        Debug.Log(enemyAttributes["charisma"]);
+        Debug.Log(enemyAttributes["health"]);
 
+        /*if (playerLost)
+        {
+           
         }
+        */
     }
     public void Finish_Battle()
     {

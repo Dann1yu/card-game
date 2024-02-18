@@ -8,7 +8,7 @@ public class cards : MonoBehaviour
 
     public int strength;
     public int intelligence;
-    public int charissma;
+    public int charisma;
     public int health;
     public GameObject image;
     // Start is called before the first frame update
