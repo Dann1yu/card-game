@@ -255,33 +255,11 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 5522592ac9724614a94f82fd92e9a58f, type: 3}
   cardscript: {fileID: 0}
   CardPrefab: {fileID: 4464024213553979744, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
-  playerhand:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  enemyhand:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  allcards:
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  playerCards: []
+  enemyCards: []
+  allCards: []
+  playerCard: {fileID: 0}
+  enemyCard: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -578,6 +556,10 @@ PrefabInstance:
       propertyPath: m_Sprite
       value: 
       objectReference: {fileID: 21300000, guid: 50fe57a4ba76f2d41b5a55068f1929ca, type: 3}
+    - target: {fileID: 3709496975150406518, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4464024213553979744, guid: 0c8548a039df57048bcc51e3c5ea3f7c, type: 3}
       propertyPath: m_Name
       value: Card
