@@ -137,8 +137,7 @@ public class Game : MonoBehaviour
                 }
             }
             playerValue = playerAttributes[value];
-            Debug.Log(enemyValue);
-            Debug.Log(playerValue);
+            Battle(playerValue, enemyValue);
             
         }
         else
@@ -152,22 +151,27 @@ public class Game : MonoBehaviour
     //Once you have the attributes start the battle
     public void Battle(int playerValue, int enemyValue)
     {
+        
         //player wins
         if (playerValue > enemyValue)
         {
+            Debug.Log("test");
             playerLost = false;
             playerCards.Add(enemyCard);
             playerCards.Insert(playerCards.Count, playerCard);
-            enemyCards.Remove(enemyCard);
+            enemyCards.Remove(enemyCard);   
         }
         //player draws, choose a random value and play again
         if(playerValue == enemyValue)
         {
-            //battle again but with a random value from the card.
+            playerValue = playerAttributes.ElementAt(random.Next(0, playerAttributes.Count)).Value;
+            enemyValue = enemyAttributes.ElementAt(random.Next(0, playerAttributes.Count)).Value;
+            Battle(playerValue, enemyValue);
         }
         //player loses
         if(playerValue < enemyValue)
         {
+            Debug.Log("Test again");
             playerLost = true;
             enemyCards.Add(playerCard);
             enemyCards.Insert(enemyCards.Count, enemyCard);
